@@ -14,7 +14,8 @@ TESTED ON
  android-ndk-r7
  android emulator with CPU armeabi-v7a and OS Anroid 4.0
  boost 1.4.7
- 
+ ant 1.8
+
 WHAT DOES IT DO
 
  it is a normal java android app that passes {"--change-world","hello","world"} 
