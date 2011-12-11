@@ -6,7 +6,7 @@ BASED ON
  1. hellojni example from android NDK (under $ANDROID_NDK/samples)
  2. first.cpp example from boost_program_options source code
  3. http://www.codexperiments.com/android/2011/05/tips-tricks-building-boost-with-ndk-r5/
-    android instructions by user "The Xperimenter"
+    android instructions by user "The Xperimenter". these are the key. 
 
 TESTED ON
 
@@ -28,7 +28,7 @@ HOW TO USE
 
   export ANDROID_NDK=~/android-ndk-r7
 
- 0.2 download and unpack boost as described at the website. dont go any further yet. 
+ 0.2 download and unpack boost as described at The Xperimenter's website. dont go any further yet. 
 
  0.3 if your version of bjam is too old (ubuntu 10.04 bjam is too old), 
 
@@ -38,10 +38,10 @@ HOW TO USE
      run b2 --prefix=/usr/local
      exit your terminal, open a new one (to reset where shell thinks bjam is)
 
- 0.3 ok now, go and follow the instructions to get boost built from the weblink, 
-     editing user-config.jam file as described
-     run bjam as described
-     ls $ANDROID_NDK/sources/boost/android/lib to see if any libs built
+ 0.3 ok now, go and follow the Xperimenter's instructions to get boost built
+     a. edit user-config.jam file as described
+     b. run bjam as described
+     c. ls $ANDROID_NDK/sources/boost/android/lib to see if any libs built
     
  1.0 get this android_hello_boost repository
 
