@@ -21,7 +21,7 @@ HOW TO USE
 
   export ANDROID_NDK=~/android-ndk-r7
 
- 0.2 download and unpack boost as described above. dont go any further yet. 
+ 0.2 download and unpack boost as described at the website. dont go any further yet. 
 
  0.3 if your version of bjam is too old (ubuntu 10.04 bjam is too old), 
 
@@ -29,14 +29,16 @@ HOW TO USE
      cd $ANDROID_NDK/sources/boost/tools/build/v2
      run bootstrap.sh
      run b2 --prefix=/usr/local
+     exit your terminal, open a new one (to reset where shell thinks bjam is)
 
- 0.3 ok now, go and follow the instructions to get boost built, by editing
-     the user-config.jam file as described, and running bjam. look under
-     $ANDROID_NDK/sources/boost/android/lib to see if any libs built
+ 0.3 ok now, go and follow the instructions to get boost built from the weblink, 
+     editing user-config.jam file as described
+     run bjam as described
+     ls $ANDROID_NDK/sources/boost/android/lib to see if any libs built
     
  0.4 create sources/boost/Android.mk as described
 
- 1.0 get this repository
+ 1.0 get this android_hello_boost repository
 
   cd $ANDROID_NDK/samples
   git clone git://github.com/donbright/android_hello_boost.git
@@ -48,18 +50,18 @@ HOW TO USE
 
  result should be like this:
 
-Gdbserver      : [arm-linux-androideabi-4.4.3] libs/armeabi/gdbserver
-Gdbsetup       : libs/armeabi/gdb.setup
-Compile++ thumb  : hello-boost <= hello-boost.cpp
-Compile++ thumb  : hello-boost <= first.cpp
-Prebuilt       : libboost_thread.a <= <NDK>/sources/boost/android/lib/
-Prebuilt       : libboost_program_options.a <= <NDK>/sources/boost/android/lib/
-Prebuilt       : libgnustl_static.a <= <NDK>/sources/cxx-stl/gnu-libstdc++/libs/armeabi/
-SharedLibrary  : libhello-boost.so
-Install        : libhello-boost.so => libs/armeabi/libhello-boost.so
-$
+ Gdbserver      : [arm-linux-androideabi-4.4.3] libs/armeabi/gdbserver
+ Gdbsetup       : libs/armeabi/gdb.setup
+ Compile++ thumb  : hello-boost <= hello-boost.cpp
+ Compile++ thumb  : hello-boost <= first.cpp
+ Prebuilt       : libboost_thread.a <= <NDK>/sources/boost/android/lib/
+ Prebuilt       : libboost_program_options.a <= <NDK>/sources/boost/android/lib/
+ Prebuilt       : libgnustl_static.a <= <NDK>/sources/cxx-stl/gnu-libstdc++/libs/armeabi/
+ SharedLibrary  : libhello-boost.so
+ Install        : libhello-boost.so => libs/armeabi/libhello-boost.so
+ $
 
- 3.0 install it to the emulator or phone
+ 3.0 install hello_boost to the emulator or phone
  
    ant debug install
 
