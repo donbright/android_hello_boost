@@ -10,8 +10,11 @@ BASED ON
 
 TESTED ON
 
- ubuntu linux 10 and android-ndk-r7
-
+ ubuntu linux 10
+ android-ndk-r7
+ android emulator with CPU armeabi-v7a and OS Anroid 4.0
+ boost 1.4.7
+ 
 WHAT DOES IT DO
 
  it is a normal java android app that passes {"--change-world","hello","world"} 
