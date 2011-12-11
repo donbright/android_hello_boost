@@ -47,7 +47,6 @@ HOW TO USE
 
   cd $ANDROID_NDK/sources
   git clone git://github.com/donbright/android_hello_boost.git
-  cd android_hello_boost
  
  1.1 create $ANDROID_NDK/sources/boost/Android.mk
 
