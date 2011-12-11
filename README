@@ -1,0 +1,76 @@
+minimalistic example for creating an android app using the 'boost' library.
+not the compile-only boost stuff, the actual boost library stuff. 
+
+BASED ON
+
+ 1. hellojni example from android NDK 
+ 2. first.cpp example from boost_program_options source code
+ 3. http://www.codexperiments.com/android/2011/05/tips-tricks-building-boost-with-ndk-r5/
+    android instructions by user "The Xperimenter"
+
+TESTED ON
+
+ ubuntu linux 10 and android-ndk-r7
+
+HOW TO USE
+
+ 0 install android SDK, and android NDK, and get to the point where you can
+   compile the hello_jni example and get it running on the emulator or a phone
+
+ 0.1 set your ANDROID_NDK. example:
+
+  export ANDROID_NDK=~/android-ndk-r7
+
+ 0.2 download and unpack boost as described above. dont go any further yet. 
+
+ 0.3 if your version of bjam is too old (ubuntu 10.04 bjam is too old), 
+
+     apt-get remove bjam
+     cd $ANDROID_NDK/sources/boost/tools/build/v2
+     run bootstrap.sh
+     run b2 --prefix=/usr/local
+
+ 0.3 ok now, go and follow the instructions to get boost built, by editing
+     the user-config.jam file as described, and running bjam. look under
+     $ANDROID_NDK/sources/boost/android/lib to see if any libs built
+    
+ 0.4 create sources/boost/Android.mk as described
+
+ 1.0 get this repository
+
+  cd $ANDROID_NDK/samples
+  git clone git://github.com/donbright/android_hello_boost.git
+  cd android_hello_boost
+ 
+ 2.0 build it
+
+  ../../ndk-build
+
+ result should be like this:
+
+Gdbserver      : [arm-linux-androideabi-4.4.3] libs/armeabi/gdbserver
+Gdbsetup       : libs/armeabi/gdb.setup
+Compile++ thumb  : hello-boost <= hello-boost.cpp
+Compile++ thumb  : hello-boost <= first.cpp
+Prebuilt       : libboost_thread.a <= <NDK>/sources/boost/android/lib/
+Prebuilt       : libboost_program_options.a <= <NDK>/sources/boost/android/lib/
+Prebuilt       : libgnustl_static.a <= <NDK>/sources/cxx-stl/gnu-libstdc++/libs/armeabi/
+SharedLibrary  : libhello-boost.so
+Install        : libhello-boost.so => libs/armeabi/libhello-boost.so
+$
+
+ 3.0 install it to the emulator or phone
+ 
+   ant debug install
+
+ 4.0 test it
+
+   look at your emulator/phone. there should be a new app called 'hello boost'
+   click it. it should open a window with a grey title bar saying 'hello boost'. 
+   then it should print 'hello boost' onto the black section of the screen.
+
+HOW THIS WAS MADE
+
+ I started out with the hellojni example.
+ I ran 'android project -p . -whatever' like the instructions say to generate the manifest, etc. 
+ I made my own Android.mk based on the instructions from The Xperimenter
