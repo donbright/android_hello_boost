@@ -15,8 +15,9 @@ TESTED ON
 WHAT DOES IT DO
 
  it is a normal java android app that passes {"--change-world","hello","world"} 
- to the native code. this code calls boost to change 'world' into 'boost' 
- and return the result. Java then prints this on the app window. 
+ to the native code. this code uses boost's program_options and string.hpp
+ functions to change 'world' into 'boost' and return the result. 
+ Java then prints "hello boost" on the app window. 
 
 HOW TO USE
 
