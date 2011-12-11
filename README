@@ -3,7 +3,7 @@ not the compile-only boost stuff, the actual boost library stuff.
 
 BASED ON
 
- 1. hellojni example from android NDK 
+ 1. hellojni example from android NDK (under $ANDROID_NDK/samples)
  2. first.cpp example from boost_program_options source code
  3. http://www.codexperiments.com/android/2011/05/tips-tricks-building-boost-with-ndk-r5/
     android instructions by user "The Xperimenter"
@@ -11,6 +11,12 @@ BASED ON
 TESTED ON
 
  ubuntu linux 10 and android-ndk-r7
+
+WHAT DOES IT DO
+
+ it is a normal java android app that passes {"--change-world","hello","world"} 
+ to the native code. this code calls boost to change 'world' into 'boost' 
+ and return the result. Java then prints this on the app window. 
 
 HOW TO USE
 
@@ -36,16 +42,26 @@ HOW TO USE
      run bjam as described
      ls $ANDROID_NDK/sources/boost/android/lib to see if any libs built
     
- 0.4 create sources/boost/Android.mk as described
-
  1.0 get this android_hello_boost repository
 
-  cd $ANDROID_NDK/samples
+  cd $ANDROID_NDK/sources
   git clone git://github.com/donbright/android_hello_boost.git
   cd android_hello_boost
  
- 2.0 build it
+ 1.1 create $ANDROID_NDK/sources/boost/Android.mk
 
+   I have included the version I used, and named it boostlib_Android.mk 
+   You can copy it as follows:
+
+   cp $ANDROID_NDK/sources/android_hello_boost/boostlib_Android.mk \
+      $ANDROID_NDK/sources/boost/Android.mk
+
+   Note that if you want to use other boost libs besides 'program_options', 
+   you need to edit this file and add entries for them.
+
+ 2.0 build android_hello_boost
+
+  cd $ANDROID_NDK/sources/android_hello_boost
   ../../ndk-build
 
  result should be like this:
@@ -65,14 +81,24 @@ HOW TO USE
  
    ant debug install
 
+Result should be a whole lot of ant jibberish, then 'Success'
+
  4.0 test it
 
    look at your emulator/phone. there should be a new app called 'hello boost'
    click it. it should open a window with a grey title bar saying 'hello boost'. 
    then it should print 'hello boost' onto the black section of the screen.
 
+   that 'hello boost' was generated through boost's program_options and string
+   functions.
+
 HOW THIS WAS MADE
 
  I started out with the hellojni example.
  I ran 'android project -p . -whatever' like the instructions say to generate the manifest, etc. 
  I made my own Android.mk based on the instructions from The Xperimenter
+
+LICENSE
+
+ Original license is maintained on all copyrighted files from original
+ authors. 
