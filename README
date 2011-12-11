@@ -98,8 +98,15 @@ HOW THIS WAS MADE
  I started out with the hellojni example.
  I ran 'android project -p . -whatever' like the instructions say to generate the manifest, etc. 
  I made my own Android.mk based on the instructions from The Xperimenter
+ http://www.stackoverflow.com and http://www.cplusplus.com were essential. 
 
 LICENSE
 
- Original license is maintained on all copyrighted files from original
- authors. 
+ This contains modifications of code originally copyright by 
+ The Android Open Source Project
+ and released under the Apache License 2.0
+ http://www.apache.org/licenses/LICENSE-2.0.html
+
+ This contains modifications of code originally copyright by Vladimir Prus 
+ and released under the Boost Software License 1.0 (first.cpp)
+ http://www.boost.org/LICENSE_1_0.txt
