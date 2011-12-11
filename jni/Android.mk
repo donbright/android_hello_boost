@@ -1,3 +1,5 @@
+# original code has been modified
+# original copyright reproduced here:
 # Copyright (C) 2009 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");

@@ -6,11 +6,15 @@ BASED ON
  1. hellojni example from android NDK (under $NDK_ROOT/samples)
  2. first.cpp example from boost_program_options source code
  3. http://www.codexperiments.com/android/2011/05/tips-tricks-building-boost-with-ndk-r5/
-    android instructions by user "The Xperimenter"
+    android instructions by user "The Xperimenter". these are the key. 
 
 TESTED ON
 
- ubuntu linux 10 and android-ndk-r7
+ ubuntu linux 10
+ android-ndk-r7
+ android emulator with CPU armeabi-v7a and OS Anroid 4.0
+ boost 1.4.7
+ ant 1.8
 
 WHAT DOES IT DO
 
@@ -31,7 +35,7 @@ HOW TO USE
   i know 'The Xperimentors' site uses $ANDROID_NDK, and other sites use other terms.
   but NDK_ROOT is what is inside the NDK's build/*.mk Makefiles
 
- 0.2 download and unpack boost as described at the website. dont go any further yet. 
+ 0.2 download and unpack boost as described at The Xperimenter's website. dont go any further yet. 
 
  0.3 if your version of bjam is too old (ubuntu 10.04 bjam is too old), 
 
