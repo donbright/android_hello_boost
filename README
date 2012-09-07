@@ -1,5 +1,20 @@
-minimalistic example for creating an android app using the 'boost' library.
-not the compile-only boost stuff, the actual boost library stuff. 
+
+Note September 2012
+
+The good folks at Mystic Tree Games ( http://www.mystictreegames.com/ ) 
+have created a script to automate a good portion of this process. Please 
+see their work at
+
+https://github.com/MysticTreeGames/Boost-for-Android
+
+
+-----
+
+Original readme follows:
+
+Android_hello_boost was a minimalistic example for creating an android 
+app using the 'boost' library. not the compile-only boost stuff, the 
+actual boost library stuff.
 
 BASED ON
 
